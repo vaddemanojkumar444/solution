@@ -1,0 +1,29 @@
+.table-container {
+    max-height: 40vh;
+    overflow: auto;
+  }
+  
+  ::ng-deep.mat-grid-tile {
+    .mat-figure {
+      flex-direction: column !important;
+    }
+  }
+  
+  .mat-card {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+ .backButton{
+   margin: 20px;
+   border: 2px solid black;
+   border-radius: 125px;
+ } 
+ .characterHover{
+   margin-bottom: 12px;
+   line-height: 30px;
+ }
+ .characterHover:hover{
+   color: rebeccapurple;
+   cursor: pointer;
+ }

@@ -1,0 +1,44 @@
+
+<a mat-button [routerLink]="['/movies']" class="backButton">
+  <mat-icon>arrow_back</mat-icon>
+  Back To Films List
+</a>
+<mat-card *ngIf="(character$ | async) as chac">
+  <mat-card-header>
+    <mat-card-title>
+      {{chac.name }}
+    </mat-card-title>
+    <mat-card-subtitle>Gender :{{ chac.gender}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- <p class="mat-body">{{film.opening_crawl}}</p> -->
+    <mat-grid-list cols="5" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <span class="mat-body-strong"> hair color: {{chac.hair_color}}</span>
+        <!-- <span class="mat-body">{{film.episode_id}}</span> -->
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <span class="mat-body-strong"> height: {{chac.height}} </span>
+        <!-- <span class="mat-body">{{film.release_date}}</span> -->
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <span class="mat-body-strong"> mass: {{chac.mass}} </span>
+        <!-- <span class="mat-body">{{film.director}}</span> -->
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <span class="mat-body-strong"> skin color: {{chac.skin_color}} </span>
+        <!-- <span class="mat-body">{{film.producer}}</span> -->
+      </mat-grid-tile>
+     
+    </mat-grid-list>
+    <h3 class="mat-h3" >Films:</h3>
+    <div class="table-container">
+      <div *ngFor="let item of films$ | async; trackBy: trackByUrl"
+           [item]="item">
+        <span (click)="openfilm(item)"  class="filmsHover">{{item.title}}</span>
+      </div>
+      <!-- <div *ngIf="(characters$ | async) as ch"></div> -->
+      <!-- <app-characters-list-table [characters]="(characters$ | async)"></app-characters-list-table> -->
+    </div>
+  </mat-card-content>
+</mat-card>

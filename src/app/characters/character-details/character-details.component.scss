@@ -1,0 +1,18 @@
+.mat-card {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.backButton{
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 125px;
+} 
+.filmsHover{
+  margin-bottom: 12px;
+  line-height: 35px;
+}
+.filmsHover:hover{
+  color: rebeccapurple;
+  cursor: pointer;
+}

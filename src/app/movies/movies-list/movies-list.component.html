@@ -1,0 +1,13 @@
+
+<swapi-movie class="flex-container" *ngFor="let movie of movies$ | async; trackBy: trackByUrl"
+           [movie]="movie"></swapi-movie>
+
+<div class="loader__bg" *ngIf="isLoading$ | async">
+  <mat-spinner
+    class="loader"
+    color="accent"
+    mode="indeterminate"
+    [diameter]="40"
+    [value]="25"></mat-spinner>
+</div>
+
